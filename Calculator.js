@@ -18,7 +18,7 @@
         let infixExp = this.toInfixExpArray(infixExpString);
         let postFixExp = this.toPostFixExp(infixExp);
         let result = this.evaluatePostFix(postFixExp);
-        return result;
+        return result ? result : 'Kidding me? Check your input';
     }
 
     // change input expression string to array like '1+2' to [1, '+', 2]
