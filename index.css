@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #f94001;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+}
+
+.cal {
+    width: 30%;
+    max-height: 97%;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.cal>* {
+    padding: 0 10px;
+}
+
+.header {
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.1);
+}
+
+.cal-display {
+    border-bottom: 1px solid rgba(70, 70, 70, 0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px 10px;
+    border: 0;
+    outline: none;
+    text-align: right;
+    font-size: 200%;
+    font-weight: 500;
+    color: grey;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input:disabled {
+    background-color: white;
+}
+
+.cal-input-grid {
+    flex-grow: 100;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.input-grid-item {
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    cursor: pointer;
+    color: grey;
+    background-color: white;
+    font-weight: 700;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.item-primary {
+    color: var(--primary-color);
+}
+
+.item-bg-primary {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.input-grid-item:active {
+    opacity: .7;
+}
+
+@media screen and (max-width: 800px) {
+    .cal {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cal {
+        width: 99%;
+    }
+}

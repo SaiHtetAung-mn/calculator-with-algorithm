@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cal">
+            <div class="header">
+                <h4>Calculator</h4>
+            </div>
+            <div class="cal-display">
+                <input type="text" id="cal-input" disabled />
+                <input type="text" id="cal-output" disabled />
+            </div>
+            <div class="cal-input-grid">
+                <option class="input-grid-item item-primary">(</option>
+                <option value="clear" class="input-grid-item item-primary">C</option>
+                <div value="delete" class="input-grid-item item-primary">
+                    <i class="material-icons">backspace</i>
+                </div>
+                <option value="%" class="input-grid-item item-primary">%</option>
+                <option value="/" class="input-grid-item item-primary">&#247</option>
+                <option value=")" class="input-grid-item item-primary">)</option>
+                <option value="1" class="input-grid-item">1</option>
+                <option value="2" class="input-grid-item">2</option>
+                <option value="3" class="input-grid-item">3</option>
+                <option value="*" class="input-grid-item item-primary">&times;</option>
+                <option value="^" class="input-grid-item item-primary">^</option>
+                <option value="4" class="input-grid-item">4</option>
+                <option value="5" class="input-grid-item">5</option>
+                <option value="6" class="input-grid-item">6</option>
+                <option value="-" class="input-grid-item item-primary">&#8722;</option>
+                <option value="s" class="input-grid-item item-primary">&#8730;</option>
+                <option value="7" class="input-grid-item">7</option>
+                <option value="8" class="input-grid-item">8</option>
+                <option value="9" class="input-grid-item">9</option>
+                <option value="+" class="input-grid-item item-primary">&#43;</option>
+                <option value="!" class="input-grid-item item-primary">&#33;</option>
+                <option value="." class="input-grid-item item-primary">.</option>
+                <option value="0" class="input-grid-item">0</option>
+                <option value="calculate" class="input-grid-item item-bg-primary" style="grid-column: 4/6;">=
+                </option>
+            </div>
+        </div>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
