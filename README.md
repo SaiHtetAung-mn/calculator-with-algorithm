@@ -1,0 +1,1 @@
+Please run with a live server because of CORS policy for JavaScript module file
