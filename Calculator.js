@@ -18,7 +18,8 @@
         let infixExp = this.toInfixExpArray(infixExpString);
         let postFixExp = this.toPostFixExp(infixExp);
         let result = this.evaluatePostFix(postFixExp);
-        return result ? result : 'Kidding me?';
+        // return result === undefined ? result : 'Kidding me?';
+        return result;
     }
 
     // change input expression string to array like '1+2' to [1, '+', 2]
@@ -26,12 +27,22 @@
         let infFixAry = [];
         for(let i=0; i<infixString.length; i++) {
             let cur_val = infixString[i];
-            if(this.operators.includes(cur_val) || cur_val == ")") {
+            if((cur_val == "-" || cur_val == "+") && (i-1 == -1 || infixString[i-1] == "(" || this.operators.includes(infixString[i-1]))) {
+                let tmp = String(cur_val); // in case of negative value or unnecessary + in front of number like -5+2 or +2+2
+                let index = i+1;
+                while(!isNaN(infixString[index])) {
+                    tmp += infixString[index];
+                    index += 1;
+                }
+                infFixAry.push(Number(tmp));
+                i = index-1;
+            }
+            else if(this.operators.includes(cur_val) || cur_val == ")") {
                 infFixAry.push(cur_val);
             }
             else if(cur_val == "(") {
-                if(!isNaN(infixString[i-1])) {
-                    infFixAry.push("*");
+                if(!isNaN(infixString[i-1]) || infixString[i-1] == ")") {
+                    infFixAry.push("*"); // case of like 12(2+1), add * between 12 and (
                 }
                 infFixAry.push(cur_val);
             }
@@ -52,7 +63,7 @@
                 i = index-1;
                 infFixAry.push(Number(tmp));
             }
-        }   
+        }
         return infFixAry;
     }
 
@@ -112,7 +123,6 @@
                 while(flag);
             }
         }
-
         return postFix;
     }
 
@@ -153,7 +163,6 @@
                 }
             }
         }
-
         return stack.length > 0 ? stack[0] : 0;
     }
 
