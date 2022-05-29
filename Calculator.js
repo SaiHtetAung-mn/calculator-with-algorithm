@@ -27,8 +27,9 @@
         let infFixAry = [];
         for(let i=0; i<infixString.length; i++) {
             let cur_val = infixString[i];
-            if((cur_val == "-" || cur_val == "+") && (i-1 == -1 || infixString[i-1] == "(" || this.operators.includes(infixString[i-1]))) {
-                let tmp = String(cur_val); // in case of negative value or unnecessary + in front of number like -5+2 or +2+2
+            // in case of negative value or unnecessary + in front of number like -5+2 or +2+2
+            if((cur_val == "-" || cur_val == "+") && (i-1 == -1 || infixString[i-1] == "(" || ("+-*/").includes(infixString[i-1]))) {
+                let tmp = String(cur_val); 
                 let index = i+1;
                 while(!isNaN(infixString[index])) {
                     tmp += infixString[index];
